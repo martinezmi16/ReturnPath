@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'responders'
 
 
 # Use jquery as the JavaScript library
@@ -42,13 +43,18 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'shoulda-matchers', '~> 2.5'
 end
 
 group :test do
   gem "rspec-rails", "~> 2.14"
   gem "factory_girl_rails"
   gem 'ffaker'
+  gem 'shoulda-matchers', '~> 2.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+gem 'devise'
