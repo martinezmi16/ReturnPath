@@ -94,4 +94,15 @@ describe Api::V1::AnimalsController do
     end
   end
 
+
+  describe "DELETE #destroy" do
+    before(:each) do
+      @animal = FactoryGirl.create :animal
+      delete :destroy, { id: @animal.id }, format: :json
+    end
+
+    it { should respond_with 204 }
+
+  end
+
 end

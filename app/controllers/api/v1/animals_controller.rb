@@ -32,6 +32,14 @@ class Api::V1::AnimalsController < ApplicationController
   end
 
 
+  #Function used when DELETE request is made to remove existing animal
+  def destroy
+    animal = Animal.find(params[:id])
+    animal.destroy
+    head 204
+  end
+
+
   private
 
   def animal_params
