@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     scope module: :v1,
           constraints: ApiConstraints.new(version: 1, default: true) do
       # We are going to list our resources here
-      resources :animals, :only => [:show, :create]
+      resources :animals, :only => [:show, :create, :update]
     end
   end
 

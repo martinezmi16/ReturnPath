@@ -55,4 +55,43 @@ describe Api::V1::AnimalsController do
     end
   end
 
+
+  describe "PUT/PATCH #update" do
+
+    context "when is successfully updated" do
+      before(:each) do
+        @animal = FactoryGirl.create :animal
+        patch :update, { id: @animal.id,
+                         animal: { name: "cat" } }, format: :json
+      end
+
+      it "renders the json representation for the updated animal" do
+        animal_response = JSON.parse(response.body, symbolize_names: true)
+        expect(animal_response[:name]).to eql "cat"
+      end
+
+      it { should respond_with 200 }
+    end
+
+    context "when is not created" do
+      before(:each) do
+        @animal = FactoryGirl.create :animal
+        patch :update, { id: @animal.id,
+                         animal: { skill: "dog" } }, format: :json
+      end
+
+      it "renders an errors json" do
+        animal_response = JSON.parse(response.body, symbolize_names: true)
+        expect(animal_response).to have_key(:errors)
+      end
+
+      it "renders the json errors on whye the user could not be created" do
+        animal_response = JSON.parse(response.body, symbolize_names: true)
+        expect(animal_response[:errors][:name].nil?)
+      end
+
+      it { should respond_with 422 }
+    end
+  end
+
 end
