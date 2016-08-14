@@ -1,0 +1,53 @@
+<h1>Welcome to the zoo!</h1>
+<p>New webpage</p>
+
+<h1>Animal API Endpoint</h1>
+<h3>GET</h3>
+<form action="/animals" method="get">
+  Animal ID: <input type="text" name="id"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<br>
+<h3>POST</h3>
+<form action="/animals" method="post">
+  Animal Name: <input type="text" name="name"><br>
+  Number of legs: <input type="number" name="leg_count"><br>
+  Lifespan: <input type="number" name="lifespan"><br>
+  Endangered?: <input type="radio" name="is_endangered" value="true"> True
+  <input type="radio" name="is_endangered" value="false" checked> False <br>
+  <input type="submit" value="Submit">
+</form>
+
+<br>
+<h3>DELETE</h3>
+<form action="/animals" method="delete">
+  Animal ID: <input type="text" name="id"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<h1>Guest API Endpoint</h1>
+<h3>GET</h3>
+<form action="/guests" method="get">
+  Guest ID: <input type="text" name="id"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<br>
+<h3>POST</h3>
+<form action="/guests" method="post">
+  Guest First Name: <input type="text" name="first_name"><br>
+  Guest Last Name: <input type="text" name="last_name"><br>
+  Age: <input type="number" name="age"><br>
+  Member?: <input type="radio" name="zoo_member" value="true"> True
+  <input type="radio" name="zoo_member" value="false" checked> False <br>
+  <input type="submit" value="Submit">
+</form>
+
+<br>
+<h3>DELETE</h3>
+<form action="/guests" method="delete">
+  Guest ID: <input type="text" name="id"><br>
+  <input type="submit" value="Submit">
+</form>
